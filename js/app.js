@@ -261,7 +261,7 @@ function makeRequest(method, url) {
       xhr.open(method, url);
       xhr.onload = function () {
         if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("invitedList").innerHTML = this.responseText;
+          
            obj=this.responseText;
            obj1 = JSON.parse(obj);
 
