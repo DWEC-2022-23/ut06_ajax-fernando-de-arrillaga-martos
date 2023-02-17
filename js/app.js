@@ -179,7 +179,34 @@ document.addEventListener('DOMContentLoaded', () => {
       const action = button.textContent;
       const nameActions = {
         remove: () => {
+          console.log(li.getElementsByTagName("span")[0]);
+          for (let i = 0; i < document.getElementsByTagName("li").length; i++) {
+            console.log(document.getElementsByTagName("li")[i].getElementsByTagName("span")[0]);
+            if(document.getElementsByTagName("li")[i].getElementsByTagName("span")[0]==li.getElementsByTagName("span")[0]){
+              console.log(i);
+              console.log(obj1[i].id);
+    
+              
+          
+              
+              const url = "http://localhost:3000/invitados/"+obj1[i].id;
+              let xhr = new XMLHttpRequest();
+              xhr.open('DELETE', url, true);
+              xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
+              xhr.send();
+              xhr.onload = function () {
+                if(xhr.status === 200) {
+                    console.log("Delete successfull!") 
+                }
+            }
+            }
+            
+            
+          }
           ul.removeChild(li);
+          
+          
+
         },
         edit: () => {
           const span = li.firstElementChild;

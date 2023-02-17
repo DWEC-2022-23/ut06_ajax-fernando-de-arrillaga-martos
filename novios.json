@@ -21,19 +21,9 @@
       "confirmado": true
     },
     {
-      "id": 6,
-      "nombre": "Juan",
-      "confirmado": true
-    },
-    {
       "id": 7,
       "nombre": "Andrea",
       "confirmado": true
-    },
-    {
-      "id": 8,
-      "nombre": "Zoe",
-      "confirmado": false
     }
   ]
 }
