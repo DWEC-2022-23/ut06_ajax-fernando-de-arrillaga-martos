@@ -1,5 +1,24 @@
 {
   "invitados": [
-    { "id": 1, "nombre": "María Lobo Garcia", "confirmado": false }, { "id": 2, "nombre": "Luis Fernández Sanchez", "confirmado": true}
+    {
+      "id": 1,
+      "nombre": "María Lobo Garcia",
+      "confirmado": false
+    },
+    {
+      "id": 2,
+      "nombre": "Luis Fernández Sanchez",
+      "confirmado": true
+    },
+    {
+      "id": 5,
+      "nombre": "Fer",
+      "confirmado": true
+    },
+    {
+      "id": 6,
+      "nombre": "Dan",
+      "confirmado": false
+    }
   ]
 }
