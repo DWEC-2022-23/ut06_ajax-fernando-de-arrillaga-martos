@@ -5,7 +5,7 @@ async function conexionAjax() {
   // await code here
   let result = await makeRequest("GET", "http://localhost:3000/invitados");
   // code below here will only execute when await makeRequest() finished loading
-  console.log(result);
+  
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -73,8 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     input.value = '';
     const li = createLI(text);
     ul.appendChild(li);
-    console.log("añadido");
-    console.log(obj1.length-1);
+
     let postObj = { 
       id: obj1[obj1.length-1].id+1, 
       nombre: text, 
@@ -103,14 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (checked) {
       listItem.className = 'responded';
-      console.log(event.target.parentNode.parentNode);
-      console.log(listItem.getElementsByTagName("span")[0]);
-      console.log(obj1);
+
       for (let i = 0; i < document.getElementsByTagName("li").length; i++) {
-        console.log(document.getElementsByTagName("li")[i].getElementsByTagName("span")[0]);
+
         if(document.getElementsByTagName("li")[i].getElementsByTagName("span")[0]==listItem.getElementsByTagName("span")[0]){
-          console.log(i);
-          console.log(obj1[i].id);
+
 
           let putObj = { 
             id: obj1[i].id, 
@@ -133,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         
       }
-      //console.log(getElementsByTagName("span")[i])
+   
       
       
 
@@ -142,10 +138,9 @@ document.addEventListener('DOMContentLoaded', () => {
       listItem.className = '';
 
       for (let i = 0; i < document.getElementsByTagName("li").length; i++) {
-        console.log(document.getElementsByTagName("li")[i].getElementsByTagName("span")[0]);
+
         if(document.getElementsByTagName("li")[i].getElementsByTagName("span")[0]==listItem.getElementsByTagName("span")[0]){
-          console.log(i);
-          console.log(obj1[i].id);
+
 
           let putObj = { 
             id: obj1[i].id, 
@@ -161,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
           xhr.send(put);
           xhr.onload = function () {
             if(xhr.status === 200) {
-                console.log("Put successfull!") 
+                console.log("Put successfull!"); 
             }
         }
         }
@@ -179,12 +174,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const action = button.textContent;
       const nameActions = {
         remove: () => {
-          console.log(li.getElementsByTagName("span")[0]);
+
           for (let i = 0; i < document.getElementsByTagName("li").length; i++) {
-            console.log(document.getElementsByTagName("li")[i].getElementsByTagName("span")[0]);
+
             if(document.getElementsByTagName("li")[i].getElementsByTagName("span")[0]==li.getElementsByTagName("span")[0]){
-              console.log(i);
-              console.log(obj1[i].id);
+
     
               
           
@@ -224,13 +218,12 @@ document.addEventListener('DOMContentLoaded', () => {
           li.insertBefore(span, input);
           li.removeChild(input);
           button.textContent = 'edit'; 
-          console.log(li.getElementsByTagName("span")[0]);
+
           for (let i = 0; i < document.getElementsByTagName("li").length; i++) {
-            console.log(document.getElementsByTagName("li")[i].getElementsByTagName("span")[0]);
+
 
             if(li.getElementsByTagName("span")[0]==document.getElementsByTagName("li")[i].getElementsByTagName("span")[0]){
-              console.log(i);
-              console.log(obj1[i].id);
+
 
               let patchObj = { 
                 id: obj1[i].id, 
@@ -271,7 +264,7 @@ function makeRequest(method, url) {
           document.getElementById("invitedList").innerHTML = this.responseText;
            obj=this.responseText;
            obj1 = JSON.parse(obj);
-          console.log(obj1);
+
           for (let i = 0; i < obj1.length; i++) {
             
             const li = document.createElement("li");
@@ -283,10 +276,10 @@ function makeRequest(method, url) {
           confirmedCheckbox.type= "checkbox";
           const buttonEdit = document.createElement("button");
           const buttonRemove = document.createElement("button");
-          console.log(obj1[i].confirmado);
+
           if (obj1[i].confirmado==true) {
             confirmedCheckbox.checked = true;
-            console.log("responded");
+
             li.className="responded";
             
           }
@@ -307,10 +300,7 @@ function makeRequest(method, url) {
 
           document.getElementById("invitedList").appendChild(li);
           a0 = obj1.a0;
-          console.log(obj);
-          console.log(obj1);
-          console.log(obj1[i].confirmado);
-          console.log(obj1[i].nombre);
+
           }
       }
       };
@@ -324,19 +314,7 @@ function makeRequest(method, url) {
   });
 }
 
-function appendJSON(){
-  const fs = require('fs');
 
-const content = 'Some content!33';
-
-fs.writeFile('texto.txt', content, err => {
-  if (err) {
-    console.error(err);
-  }
-  // file written successfully
-});
-
-}
   
   
   
