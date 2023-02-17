@@ -223,7 +223,35 @@ document.addEventListener('DOMContentLoaded', () => {
           span.textContent = input.value;
           li.insertBefore(span, input);
           li.removeChild(input);
-          button.textContent = 'edit';        
+          button.textContent = 'edit'; 
+          console.log(li.getElementsByTagName("span")[0]);
+          for (let i = 0; i < document.getElementsByTagName("li").length; i++) {
+            console.log(document.getElementsByTagName("li")[i].getElementsByTagName("span")[0]);
+
+            if(li.getElementsByTagName("span")[0]==document.getElementsByTagName("li")[i].getElementsByTagName("span")[0]){
+              console.log(i);
+              console.log(obj1[i].id);
+
+              let patchObj = { 
+                id: obj1[i].id, 
+                nombre: li.getElementsByTagName("span")[0].innerText 
+                
+            }
+
+              let patch = JSON.stringify(patchObj);
+              const url = "http://localhost:3000/invitados/"+obj1[i].id;
+              let xhr = new XMLHttpRequest();
+              xhr.open('PATCH', url, true);
+              xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
+              xhr.send(patch);
+              xhr.onload = function () {
+                if(xhr.status === 200) {
+                    console.log("Patch successfull!") 
+                }
+              }
+            }
+          }
+                 
         }
       };
       

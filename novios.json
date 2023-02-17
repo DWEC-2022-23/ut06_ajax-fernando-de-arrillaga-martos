@@ -11,19 +11,14 @@
       "confirmado": true
     },
     {
-      "id": 4,
-      "title": "What is AJAX",
-      "body": "AJAX stands for Asynchronous JavaScript..."
-    },
-    {
       "id": 5,
       "nombre": "Fer",
       "confirmado": true
     },
     {
-      "id": 7,
-      "nombre": "Andrea",
-      "confirmado": true
+      "id": 6,
+      "nombre": "Dan",
+      "confirmado": false
     }
   ]
 }
